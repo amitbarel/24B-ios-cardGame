@@ -10,12 +10,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var Score1: UILabel!
     @IBOutlet weak var Score2: UILabel!
     
-    private var gameManager : GameManager
+    var gameManager : GameManager = GameManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        self.gameManager.resetGame()
+        self.Score1.text = String(self.gameManager.player1Score)
+        self.Score2.text = String(self.gameManager.player2Score)
     }
 
 
