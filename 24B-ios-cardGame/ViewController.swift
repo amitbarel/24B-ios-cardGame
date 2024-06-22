@@ -15,8 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.gameManager.resetGame()
-        self.Score1.text = String(self.gameManager.player1Score)
-        self.Score2.text = String(self.gameManager.player2Score)
     }
 
 
