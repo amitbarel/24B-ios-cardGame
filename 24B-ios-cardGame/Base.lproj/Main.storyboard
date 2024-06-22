@@ -19,19 +19,25 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="0iE-BP-ixe" userLabel="background_IMG">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_of_deck" translatesAutoresizingMaskIntoConstraints="NO" id="AIW-XJ-0ge" userLabel="LowerCard">
+                                <rect key="frame" x="80" y="485" width="233" height="328"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_of_deck" translatesAutoresizingMaskIntoConstraints="NO" id="e1Z-4n-Ct7" userLabel="UpperCard">
+                                <rect key="frame" x="80" y="64" width="233" height="303"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PmL-4n-sYF" userLabel="Scores">
                                 <rect key="frame" x="20" y="387" width="353" height="78"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DL5-Jg-Emy" userLabel="Player1Scores">
                                         <rect key="frame" x="0.0" y="0.0" width="132.33333333333334" height="78"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player1 Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJ4-3F-N54" userLabel="Player2 Score">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player1 Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJ4-3F-N54">
                                                 <rect key="frame" x="0.0" y="0.0" width="132.33333333333334" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeX-VT-lLa" userLabel="Score">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeX-VT-lLa" userLabel="1_Score">
                                                 <rect key="frame" x="0.0" y="25.333333333333311" width="132.33333333333334" height="52.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,7 +65,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uog-6e-0jK" userLabel="Score">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uog-6e-0jK" userLabel="2_Score">
                                                 <rect key="frame" x="0.0" y="25.333333333333311" width="132.33333333333334" height="52.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,22 +77,15 @@
                                 <constraints>
                                     <constraint firstItem="DL5-Jg-Emy" firstAttribute="width" secondItem="L79-ur-DiY" secondAttribute="width" multiplier="1:1" id="bgL-Iz-SdK"/>
                                     <constraint firstItem="TCJ-j0-NmU" firstAttribute="width" secondItem="PmL-4n-sYF" secondAttribute="width" multiplier="1:4" id="d1K-WC-zVI"/>
-                                    <constraint firstItem="TCJ-j0-NmU" firstAttribute="height" secondItem="PmL-4n-sYF" secondAttribute="height" multiplier="2:6" id="p5V-q6-TXY"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_of_deck" translatesAutoresizingMaskIntoConstraints="NO" id="AIW-XJ-0ge" userLabel="LowerCard">
-                                <rect key="frame" x="80" y="485" width="233" height="328"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_of_deck" translatesAutoresizingMaskIntoConstraints="NO" id="e1Z-4n-Ct7" userLabel="UpperCard">
-                                <rect key="frame" x="80" y="64" width="233" height="303"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AIW-XJ-0ge" secondAttribute="trailing" constant="80" id="2d6-SZ-VUX"/>
                             <constraint firstItem="e1Z-4n-Ct7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="43E-CS-rtf"/>
-                            <constraint firstItem="e1Z-4n-Ct7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5UI-7p-5he"/>
+                            <constraint firstItem="e1Z-4n-Ct7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5UI-7p-5he"/>
                             <constraint firstItem="PmL-4n-sYF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="92O-cu-8gW"/>
                             <constraint firstItem="PmL-4n-sYF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GeH-09-Lmr"/>
                             <constraint firstItem="AIW-XJ-0ge" firstAttribute="top" secondItem="PmL-4n-sYF" secondAttribute="bottom" constant="20" id="K7C-ea-nGv"/>
@@ -105,7 +104,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Score2" destination="GeX-VT-lLa" id="nuM-0t-MoL"/>
+                        <outlet property="Card1" destination="AIW-XJ-0ge" id="n8b-nN-WVZ"/>
+                        <outlet property="Card2" destination="e1Z-4n-Ct7" id="jJW-Ns-QjC"/>
+                        <outlet property="Score1" destination="GeX-VT-lLa" id="W99-fu-nLz"/>
+                        <outlet property="Score2" destination="uog-6e-0jK" id="oMN-uL-zjJ"/>
                         <outlet property="startButton" destination="TCJ-j0-NmU" id="0Jj-wu-FmN"/>
                     </connections>
                 </viewController>
