@@ -44,7 +44,11 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Start">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="startClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1h-eC-q19"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="L79-ur-DiY" userLabel="Player2Scores">
                                         <rect key="frame" x="220.66666666666663" y="0.0" width="132.33333333333337" height="78"/>
@@ -102,6 +106,7 @@
                     </view>
                     <connections>
                         <outlet property="Score2" destination="GeX-VT-lLa" id="nuM-0t-MoL"/>
+                        <outlet property="startButton" destination="TCJ-j0-NmU" id="0Jj-wu-FmN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

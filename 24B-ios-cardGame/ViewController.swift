@@ -10,6 +10,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var Score1: UILabel!
     @IBOutlet weak var Score2: UILabel!
     
+    
+    @IBOutlet weak var startButton: UIButton!
+    
     var gameManager : GameManager = GameManager()
     
     override func viewDidLoad() {
@@ -18,5 +21,8 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func startClicked(_ sender: UIButton) {
+        self.gameManager.resetGame()
+    }
 }
 
