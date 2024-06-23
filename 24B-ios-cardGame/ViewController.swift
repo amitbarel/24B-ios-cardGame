@@ -30,29 +30,22 @@ class ViewController: UIViewController {
     @objc private func playRound() {
         updateUI()
         
-        let result = gameManager.flipCards()
-        
-        if let player1Card = result.player1Card, let player2Card = result.player2Card {
-            Card1.image = UIImage(named: player1Card.imageName)
-            Card2.image = UIImage(named: player2Card.imageName)
-        } else {
-            endGame()
-        }
-        
-        let seconds = 1.0
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            if let res = self.gameManager.compareCards(card1: result.player1Card!, card2: result.player2Card!){
-                if res.compare(o2:result.player1Card!){
-                    self.gameManager.player1Score += 1
-                } else if res.compare(o2: result.player2Card!){
-                    self.gameManager.player2Score += 1
-                }
+        for _ in 1...26 {
+            let result = gameManager.flipCards()
+            Card1.image = UIImage(named: result.player1Card.imageName)
+            Card2.image = UIImage(named: result.player2Card.imageName)
+            
+            let res = gameManager.compareCards(card1: result.player1Card, card2: result.player2Card)
+
+            if res.compare(o2:result.player1Card){
+                gameManager.player1Score += 1
+            } else if res.compare(o2: result.player2Card){
+                gameManager.player2Score += 1
             }
+            updateUI()
         }
-                
         
-        
-        updateUI()
+        endGame()
     }
     
     private func endGame() {
