@@ -5,8 +5,8 @@ class GameManager {
     var player1: Player
     var player2: Player
     
-    private(set) var player1Score: Int = 0
-    private(set) var player2Score: Int = 0
+    var player1Score: Int = 0
+    var player2Score: Int = 0
     
     
     init(){
@@ -26,20 +26,19 @@ class GameManager {
         let player1Card = self.player1.cards.removeLast()
         let player2Card = self.player2.cards.removeLast()
         
-        if player1Card.rank.rawValue > player2Card.rank.rawValue {
-            player1Score += 1
-            self.player1.cards.insert(player1Card, at: 0)
-            self.player1.cards.insert(player2Card,at: 0)
-        } else if player1Card.rank.rawValue < player2Card.rank.rawValue {
-            player2Score += 1
-            self.player2.cards.insert(player1Card,at: 0)
-            self.player2.cards.insert(player2Card,at: 0)
-        } else {
-            self.player1.cards.insert(player1Card,at: 0)
-            self.player2.cards.insert(player2Card,at: 0)
-        }
         return (player1Card,player2Card)
     }
+    
+    func compareCards(card1:Card, card2: Card) -> Card? {
+        if card1.rank.rawValue > card2.rank.rawValue {
+            return card1
+        } else if card1.rank.rawValue < card2.rank.rawValue {
+            return card2
+        }
+        return nil
+    }
+    
+    
     
     func resetGame() {
         let gameDeck = Deck().cards

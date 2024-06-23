@@ -8,11 +8,23 @@ enum Rank: Int {
     case two, three, four, five, six, seven, eight, nine, ten, jack, queen, king
 }
 
-struct Card {
+class Card {
+    
     let symbol: Symbol
     let rank: Rank
+    var imageName: String
     
-    var imageName: String {
-        return "\(rank.rawValue)_of_\(symbol.rawValue)"
+    init(symbol:Symbol, rank: Rank){
+        self.symbol = symbol
+        self.rank = rank
+        self.imageName = "\(rank.rawValue)_of_\(symbol.rawValue)"
+    }
+    
+    
+    func compare (o2: Card) -> Bool{
+        if self.symbol == o2.symbol && self.rank == o2.rank {
+            return true
+        }
+        return false
     }
 }
