@@ -12,7 +12,6 @@ class GameManager {
     init(){
         let gameDeck = Deck().cards
         let halfSize = gameDeck.count / 2
-        print("\(halfSize)")
         self.player1 = Player()
         self.player1.cards = Array(gameDeck[0..<halfSize])
         self.player2 = Player()
