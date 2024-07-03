@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7E596E12C35C19F00C8849D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E596E02C35C19F00C8849D /* MainController.swift */; };
 		EFB8EFED2C26A99500F13842 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8EFEC2C26A99500F13842 /* AppDelegate.swift */; };
 		EFB8EFEF2C26A99500F13842 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8EFEE2C26A99500F13842 /* SceneDelegate.swift */; };
 		EFB8EFF12C26A99500F13842 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8EFF02C26A99500F13842 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E7E596E02C35C19F00C8849D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		EFB8EFE92C26A99500F13842 /* 24B-ios-cardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "24B-ios-cardGame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB8EFEC2C26A99500F13842 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFB8EFEE2C26A99500F13842 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				EFB8EFEC2C26A99500F13842 /* AppDelegate.swift */,
 				EFB8EFEE2C26A99500F13842 /* SceneDelegate.swift */,
 				EFB8EFF02C26A99500F13842 /* ViewController.swift */,
+				E7E596E02C35C19F00C8849D /* MainController.swift */,
 				EFB8EFF22C26A99500F13842 /* Main.storyboard */,
 				EFB8EFF52C26A99600F13842 /* Assets.xcassets */,
 				EFB8EFF72C26A99600F13842 /* LaunchScreen.storyboard */,
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7E596E12C35C19F00C8849D /* MainController.swift in Sources */,
 				EFB8F0252C26B5D800F13842 /* Deck.swift in Sources */,
 				EFB8EFF12C26A99500F13842 /* ViewController.swift in Sources */,
 				EFB8EFED2C26A99500F13842 /* AppDelegate.swift in Sources */,

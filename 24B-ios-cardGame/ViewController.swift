@@ -1,13 +1,20 @@
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
     
+    var previousController: MainController?
+    
+    @IBOutlet weak var winner: UITextField!
     
     @IBOutlet weak var Card1: UIImageView!
     @IBOutlet weak var Card2: UIImageView!
     
-    @IBOutlet weak var Score1: UILabel!
-    @IBOutlet weak var Score2: UILabel!
+    @IBOutlet weak var westernPlayer: UILabel!
+    @IBOutlet weak var easternPlayer: UILabel!
+    
+    @IBOutlet weak var ScoreW: UILabel!
+    @IBOutlet weak var ScoreE: UILabel!
     
     @IBOutlet weak var startButton: UIButton!
     
@@ -18,11 +25,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let name = previousController?.savedName {
+            if var side = previousController?.side {
+                if side == 1 {
+                    westernPlayer.text = name
+                    easternPlayer.text = "PC"
+                } else {
+                    westernPlayer.text = "PC"
+                    easternPlayer.text = name
+                }
+            }
+        }
         startButton.isEnabled = true
         updateUI()
     }
-
-
+    
+    
     @IBAction func startClicked(_ sender: UIButton) {
         gameTimer?.invalidate()
         roundCounter = 0
@@ -40,11 +58,11 @@ class ViewController: UIViewController {
         let result = gameManager.flipCards()
         
         uiFlipAndCompare(c1: result.player1Card, c2: result.player2Card)
-                
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+        
+        gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         roundCounter += 1
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(playRound), userInfo: nil, repeats: false)
+        gameTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(playRound), userInfo: nil, repeats: false)
     }
     
     private func uiFlipAndCompare(c1: Card, c2: Card){
@@ -57,11 +75,11 @@ class ViewController: UIViewController {
             UIView.transition(with: Card1, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
             UIView.transition(with: Card2, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
             let res = gameManager.compareCards(card1: c1, card2: c2)
-
+            
             if res.compare(o2:c1){
-                gameManager.player1Score += 1
+                gameManager.playerWestScore += 1
             } else if res.compare(o2: c2){
-                gameManager.player2Score += 1
+                gameManager.playerEastScore += 1
             }
         } else {
             self.isFront = true
@@ -73,20 +91,37 @@ class ViewController: UIViewController {
         }
     }
     
+    private func whoWon(){
+        guard let namewW = westernPlayer.text, let nameE = easternPlayer.text else {
+            return
+        }
+        winner.isHidden = false
+        let const = " is the winner"
+        if gameManager.playerWestScore > gameManager.playerEastScore {
+            winner.text = namewW + const
+        } else if gameManager.playerWestScore < gameManager.playerEastScore {
+            winner.text = nameE + const
+        } else {
+            winner.text = "It was a tie"
+        }
+    }
+    
     private func endGame() {
         gameTimer?.invalidate()
         gameTimer = nil
-        startButton.isEnabled = true
         updateUI()
+        Card1.isHidden = true
+        Card2.isHidden = true
+        whoWon()
     }
     
     @objc private func updateUI() {
-        guard let Score1 = Score1, let Score2 = Score2 else {
+        guard let Score1 = ScoreW, let Score2 = ScoreE else {
             return
         }
                 
-        Score1.text = "\(gameManager.player1Score)"
-        Score2.text = "\(gameManager.player2Score)"
+        Score1.text = "\(gameManager.playerWestScore)"
+        Score2.text = "\(gameManager.playerEastScore)"
     }
 }
 

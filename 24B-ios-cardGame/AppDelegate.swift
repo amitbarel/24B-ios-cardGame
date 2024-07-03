@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  24B-ios-cardGame
-//
-//  Created by Student5 on 22/06/2024.
-//
-
 import UIKit
 
 @main
