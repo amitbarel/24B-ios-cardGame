@@ -3,10 +3,6 @@ import Foundation
 
 class ViewController: UIViewController {
     
-    var previousController: MainController?
-    
-    @IBOutlet weak var winner: UITextField!
-    
     @IBOutlet weak var Card1: UIImageView!
     @IBOutlet weak var Card2: UIImageView!
     
@@ -16,8 +12,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var ScoreW: UILabel!
     @IBOutlet weak var ScoreE: UILabel!
     
-    @IBOutlet weak var startButton: UIButton!
-    
     let gameManager : GameManager = GameManager()
     var gameTimer: Timer?
     var roundCounter = 0
@@ -25,9 +19,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let name = previousController?.savedName {
-            if var side = previousController?.side {
-                if side == 1 {
+        if let name = UserDefaults.standard.string(forKey: "name") {
+            if let side = UserDefaults.standard.string(forKey: "side"){
+                if side == "west" {
                     westernPlayer.text = name
                     easternPlayer.text = "PC"
                 } else {
@@ -36,15 +30,9 @@ class ViewController: UIViewController {
                 }
             }
         }
-        startButton.isEnabled = true
         updateUI()
-    }
-    
-    
-    @IBAction func startClicked(_ sender: UIButton) {
         gameTimer?.invalidate()
         roundCounter = 0
-        startButton.isEnabled = false
         playRound()
         
     }
@@ -95,15 +83,15 @@ class ViewController: UIViewController {
         guard let namewW = westernPlayer.text, let nameE = easternPlayer.text else {
             return
         }
-        winner.isHidden = false
-        let const = " is the winner"
+        var winner : String = ""
         if gameManager.playerWestScore > gameManager.playerEastScore {
-            winner.text = namewW + const
+            winner = namewW
         } else if gameManager.playerWestScore < gameManager.playerEastScore {
-            winner.text = nameE + const
+            winner = nameE
         } else {
-            winner.text = "It was a tie"
+            winner = "Tie"
         }
+        UserDefaults.standard.set(winner, forKey: winner)
     }
     
     private func endGame() {

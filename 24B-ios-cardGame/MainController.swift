@@ -1,11 +1,6 @@
 import UIKit
 import CoreLocation
 
-class DataManager {
-    static let shared = DataManager()
-    var myName : String = ""
-}
-
 class MainController : UIViewController, CLLocationManagerDelegate {
     
     
@@ -21,36 +16,36 @@ class MainController : UIViewController, CLLocationManagerDelegate {
     
     private var locationManager: CLLocationManager?
     
-    var side = 2
+    var side : String = ""
     var currentLoc = 0.0
-    var comparedLoc = 0.0
-    var savedName = DataManager.shared.myName
+    var savedName : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserLocation()
-            
     }
         
         @IBAction func start(_ sender: UIButton) {
             sender.isHidden = true
-            performSegue(withIdentifier: "toTheGame", sender: self)
+            self.performSegue(withIdentifier: "toTheGame", sender: self)
         }
         
         @IBAction func clickToSave(_ sender: UIButton) {
             savedName = (etName.text ?? "")
             nameTXT.text = "Hi " + (savedName)
-            DataManager.shared.myName = savedName
+            UserDefaults.standard.set(savedName, forKey: "name")
             etName.isHidden = true
             sender.isHidden = true
             startBTN.isHidden = false
             
             if currentLoc > 34.81801612783521{
-                easternIMG.isHidden = true
-            } else {
                 westernIMG.isHidden = true
-                side = 1
+                side = "east"
+            } else {
+                easternIMG.isHidden = true
+                side = "west"
             }
+            UserDefaults.standard.set(side, forKey: "side")
         }
         
         func getUserLocation(){
@@ -67,12 +62,12 @@ class MainController : UIViewController, CLLocationManagerDelegate {
             }
         }
         
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "toTheGame" {
-                if let viewController = segue.destination as? ViewController {
-                    viewController.previousController = self
-                }
-            }
-        }
+//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            if segue.identifier == "toTheGame" {
+//                if let viewController = segue.destination as? ViewController {
+//                    viewController.previousController = self
+//                }
+//            }
+//        }
     
     }

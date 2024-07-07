@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import CoreLocation
 
 final class _4B_ios_cardGameUITests: XCTestCase {
 
@@ -25,6 +26,7 @@ final class _4B_ios_cardGameUITests: XCTestCase {
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
+        XCUIDevice.shared.location = XCUILocation(location: CLLocation(latitude: 32.08589, longitude: 34.87094))
         app.launch()
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
