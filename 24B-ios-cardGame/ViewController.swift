@@ -12,45 +12,47 @@ class ViewController: UIViewController {
     @IBOutlet weak var ScoreW: UILabel!
     @IBOutlet weak var ScoreE: UILabel!
     
-    let gameManager : GameManager = GameManager()
-    var gameTimer: Timer?
+    let gameManager = GameManager()
     var roundCounter = 0
     var isFront = true
+    var gameTimer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let name = UserDefaults.standard.string(forKey: "name") {
-            if let side = UserDefaults.standard.string(forKey: "side"){
-                if side == "west" {
-                    westernPlayer.text = name
-                    easternPlayer.text = "PC"
-                } else {
-                    westernPlayer.text = "PC"
-                    easternPlayer.text = name
-                }
-            }
-        }
-        updateUI()
-        gameTimer?.invalidate()
-        roundCounter = 0
-        playRound()
+        self.navigationItem.hidesBackButton = true
+        setupPlayers()
+        startGame()
         
     }
     
+    private func setupPlayers() {
+        if let name = UserDefaults.standard.string(forKey: "name"),
+           let side = UserDefaults.standard.string(forKey: "side") {
+            if side == "west" {
+                westernPlayer.text = name
+                easternPlayer.text = "PC"
+            } else {
+                westernPlayer.text = "PC"
+                easternPlayer.text = name
+            }
+        }
+    }
+    
+    private func startGame() {
+        updateUI()
+        roundCounter = 0
+        gameTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(playRound), userInfo: nil, repeats: true)
+    }
+    
     @objc private func playRound() {
-        guard roundCounter < 26 else {
+                
+        if roundCounter >= 10 {
             endGame()
             return
         }
         
         let result = gameManager.flipCards()
-        
         uiFlipAndCompare(c1: result.player1Card, c2: result.player2Card)
-        
-        gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
-        roundCounter += 1
-        
-        gameTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(playRound), userInfo: nil, repeats: false)
     }
     
     private func uiFlipAndCompare(c1: Card, c2: Card){
@@ -76,7 +78,11 @@ class ViewController: UIViewController {
             Card2.image = img
             UIView.transition(with: Card1, duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)
             UIView.transition(with: Card2, duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+            self.roundCounter += 1
+            updateUI()
         }
+        
+        
     }
     
     private func whoWon(){
@@ -91,7 +97,7 @@ class ViewController: UIViewController {
         } else {
             winner = "Tie"
         }
-        UserDefaults.standard.set(winner, forKey: winner)
+        UserDefaults.standard.set(winner, forKey: "winner")
     }
     
     private func endGame() {
@@ -101,6 +107,9 @@ class ViewController: UIViewController {
         Card1.isHidden = true
         Card2.isHidden = true
         whoWon()
+        if let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "winnerController") as? WinnerControllerViewController {
+            self.navigationController?.pushViewController(destinationVC, animated: true)
+        }
     }
     
     @objc private func updateUI() {
@@ -110,6 +119,10 @@ class ViewController: UIViewController {
                 
         Score1.text = "\(gameManager.playerWestScore)"
         Score2.text = "\(gameManager.playerEastScore)"
+    }
+    
+    deinit {
+        gameTimer?.invalidate()
     }
 }
 

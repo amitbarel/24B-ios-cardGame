@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E7E596E12C35C19F00C8849D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E596E02C35C19F00C8849D /* MainController.swift */; };
+		EF4225A42C4254B400A4076D /* WinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4225A32C4254B400A4076D /* WinnerController.swift */; };
 		EFB8EFED2C26A99500F13842 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8EFEC2C26A99500F13842 /* AppDelegate.swift */; };
 		EFB8EFEF2C26A99500F13842 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8EFEE2C26A99500F13842 /* SceneDelegate.swift */; };
 		EFB8EFF12C26A99500F13842 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8EFF02C26A99500F13842 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		E7E596E02C35C19F00C8849D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		EF4225A32C4254B400A4076D /* WinnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerController.swift; sourceTree = "<group>"; };
 		EFB8EFE92C26A99500F13842 /* 24B-ios-cardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "24B-ios-cardGame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB8EFEC2C26A99500F13842 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFB8EFEE2C26A99500F13842 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				EFB8F0202C26AF4500F13842 /* GameManager.swift */,
 				EFB8F0222C26B11D00F13842 /* Player.swift */,
 				EFB8F0242C26B5D800F13842 /* Deck.swift */,
+				EF4225A32C4254B400A4076D /* WinnerController.swift */,
 			);
 			path = "24B-ios-cardGame";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF4225A42C4254B400A4076D /* WinnerController.swift in Sources */,
 				E7E596E12C35C19F00C8849D /* MainController.swift in Sources */,
 				EFB8F0252C26B5D800F13842 /* Deck.swift in Sources */,
 				EFB8EFF12C26A99500F13842 /* ViewController.swift in Sources */,
@@ -459,6 +463,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "24B-ios-cardGame/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To get your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -486,6 +491,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "24B-ios-cardGame/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To get your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
