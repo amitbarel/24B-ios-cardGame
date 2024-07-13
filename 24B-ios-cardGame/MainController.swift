@@ -73,7 +73,6 @@ class MainController : UIViewController, CLLocationManagerDelegate {
                 self.side = "west"
             }
             UserDefaults.standard.set(self.side, forKey: "side")
-            print("got location: \(lat) \(lon)")
         }
     }
     

@@ -225,7 +225,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubm-0v-vYQ">
-                                <rect key="frame" x="136.33333333333334" y="309.66666666666669" width="120.33333333333334" height="49"/>
+                                <rect key="frame" x="136.33333333333334" y="279.66666666666669" width="120.33333333333334" height="49"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -238,19 +238,28 @@
                                     <action selector="backToStart:" destination="Pif-fZ-7Rj" eventType="touchUpInside" id="CFf-q1-zLk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obT-QU-ZEF">
+                                <rect key="frame" x="163.66666666666666" y="347" width="66" height="36.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cmx-dh-bYG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Lbg-lq-hf2" firstAttribute="top" secondItem="obT-QU-ZEF" secondAttribute="bottom" constant="25" id="CJc-eD-E1Q"/>
                             <constraint firstItem="Ubm-0v-vYQ" firstAttribute="centerX" secondItem="Lyn-CY-zVq" secondAttribute="centerX" id="CkG-y2-R8s"/>
-                            <constraint firstItem="Lbg-lq-hf2" firstAttribute="top" secondItem="Ubm-0v-vYQ" secondAttribute="bottom" constant="50" id="NDm-Wt-tOy"/>
+                            <constraint firstItem="Lbg-lq-hf2" firstAttribute="top" secondItem="Ubm-0v-vYQ" secondAttribute="bottom" constant="80" id="NDm-Wt-tOy"/>
                             <constraint firstItem="Lbg-lq-hf2" firstAttribute="centerX" secondItem="Lyn-CY-zVq" secondAttribute="centerX" id="bXl-e7-J5l"/>
                             <constraint firstItem="Ubm-0v-vYQ" firstAttribute="centerX" secondItem="Lyn-CY-zVq" secondAttribute="centerX" id="iuz-IJ-AhZ"/>
                             <constraint firstItem="Lbg-lq-hf2" firstAttribute="centerY" secondItem="Lyn-CY-zVq" secondAttribute="centerY" id="mQO-DR-n71"/>
+                            <constraint firstItem="obT-QU-ZEF" firstAttribute="centerX" secondItem="Lyn-CY-zVq" secondAttribute="centerX" id="zGd-PP-VWc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="resetBTN" destination="Lbg-lq-hf2" id="Odj-bg-vrj"/>
+                        <outlet property="scoreLBL" destination="obT-QU-ZEF" id="cOQ-6b-366"/>
                         <outlet property="winnerLBL" destination="Ubm-0v-vYQ" id="3P8-Tu-DE8"/>
                     </connections>
                 </viewController>

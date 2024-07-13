@@ -89,13 +89,19 @@ class ViewController: UIViewController {
         guard let namewW = westernPlayer.text, let nameE = easternPlayer.text else {
             return
         }
+        var winningScore = ""
         var winner : String = ""
         if gameManager.playerWestScore > gameManager.playerEastScore {
             winner = namewW
+            winningScore = String(gameManager.playerWestScore)
         } else if gameManager.playerWestScore < gameManager.playerEastScore {
             winner = nameE
+            winningScore = String(gameManager.playerEastScore)
         } else {
             winner = "Tie"
+        }
+        if winningScore != "" {
+            UserDefaults.standard.set(winningScore, forKey: "score")
         }
         UserDefaults.standard.set(winner, forKey: "winner")
     }
