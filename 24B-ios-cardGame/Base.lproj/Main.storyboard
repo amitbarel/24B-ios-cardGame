@@ -111,8 +111,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="0iE-BP-ixe" userLabel="background_IMG">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_of_deck" translatesAutoresizingMaskIntoConstraints="NO" id="AIW-XJ-0ge" userLabel="LowerCard">
-                                <rect key="frame" x="80" y="485" width="233" height="328"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_of_deck" translatesAutoresizingMaskIntoConstraints="NO" id="AIW-XJ-0ge" userLabel="LowerCard">
+                                <rect key="frame" x="80" y="485" width="233" height="298"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_of_deck" translatesAutoresizingMaskIntoConstraints="NO" id="e1Z-4n-Ct7" userLabel="UpperCard">
                                 <rect key="frame" x="80" y="69" width="233" height="298"/>
@@ -180,9 +180,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AIW-XJ-0ge" secondAttribute="trailing" constant="80" id="2d6-SZ-VUX"/>
                             <constraint firstItem="e1Z-4n-Ct7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="43E-CS-rtf"/>
                             <constraint firstItem="e1Z-4n-Ct7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5UI-7p-5he"/>
+                            <constraint firstItem="AIW-XJ-0ge" firstAttribute="width" secondItem="e1Z-4n-Ct7" secondAttribute="width" id="8Gv-jb-Rvi"/>
                             <constraint firstItem="PmL-4n-sYF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="92O-cu-8gW"/>
+                            <constraint firstItem="AIW-XJ-0ge" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AZc-lB-U8f"/>
                             <constraint firstItem="PmL-4n-sYF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GeH-09-Lmr"/>
                             <constraint firstItem="AIW-XJ-0ge" firstAttribute="top" secondItem="PmL-4n-sYF" secondAttribute="bottom" constant="20" id="K7C-ea-nGv"/>
+                            <constraint firstItem="e1Z-4n-Ct7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Nhd-Ii-BaA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0iE-BP-ixe" secondAttribute="trailing" id="S8a-x4-3n8"/>
                             <constraint firstItem="AIW-XJ-0ge" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZYy-Fd-818"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AIW-XJ-0ge" secondAttribute="bottom" constant="5" id="Zdc-Qf-njf"/>
@@ -192,6 +195,7 @@
                             <constraint firstItem="e1Z-4n-Ct7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="heO-rr-93n"/>
                             <constraint firstItem="PmL-4n-sYF" firstAttribute="top" secondItem="e1Z-4n-Ct7" secondAttribute="bottom" constant="20" id="iwd-jZ-CFV"/>
                             <constraint firstAttribute="bottom" secondItem="0iE-BP-ixe" secondAttribute="bottom" id="pmX-CX-KaV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AIW-XJ-0ge" secondAttribute="bottom" constant="35" id="qrb-vf-O5E"/>
                             <constraint firstItem="PmL-4n-sYF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rzw-I0-IxH"/>
                             <constraint firstItem="0iE-BP-ixe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="t5K-UF-eyV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PmL-4n-sYF" secondAttribute="trailing" constant="20" id="tuJ-1P-e5h"/>
